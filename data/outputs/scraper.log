@@ -1,0 +1,45 @@
+time=2025-12-25T09:18:15.103-05:00 level=INFO msg="Tor Scraper started"
+time=2025-12-25T09:18:15.103-05:00 level=INFO msg="Loaded targets" count=1
+time=2025-12-25T09:18:15.103-05:00 level=INFO msg="Scan completed"
+time=2025-12-25T09:19:08.805-05:00 level=INFO msg="Tor Scraper started"
+time=2025-12-25T09:19:08.805-05:00 level=INFO msg="Loaded targets" count=8
+time=2025-12-25T09:19:08.805-05:00 level=INFO msg="Scan completed"
+time=2025-12-25T09:19:44.328-05:00 level=INFO msg="Tor Scraper started"
+time=2025-12-25T09:19:44.328-05:00 level=INFO msg="Loaded targets" count=8
+time=2025-12-25T09:19:44.328-05:00 level=INFO msg="Scan completed"
+time=2025-12-25T09:20:02.414-05:00 level=INFO msg="Tor Scraper started"
+time=2025-12-25T09:20:02.414-05:00 level=INFO msg="Loaded targets" count=8
+time=2025-12-25T09:20:02.414-05:00 level=INFO msg="Scan completed"
+time=2025-12-25T09:21:35.034-05:00 level=INFO msg="Tor Scraper started"
+time=2025-12-25T09:21:35.035-05:00 level=INFO msg="Loaded targets" count=8
+time=2025-12-25T09:21:35.035-05:00 level=INFO msg="Scan completed"
+time=2025-12-25T09:21:53.601-05:00 level=INFO msg="Tor Scraper started"
+time=2025-12-25T09:21:53.602-05:00 level=ERROR msg="No targets found in the specified file"
+time=2025-12-25T09:22:25.487-05:00 level=INFO msg="Tor Scraper started"
+time=2025-12-25T09:22:25.487-05:00 level=INFO msg="Loaded targets" count=16
+time=2025-12-25T09:22:25.487-05:00 level=INFO msg="Scan completed"
+time=2025-12-25T09:22:50.081-05:00 level=INFO msg="Tor Scraper started"
+time=2025-12-25T09:22:50.081-05:00 level=INFO msg="Loaded targets" count=16
+time=2025-12-25T09:22:50.081-05:00 level=INFO msg=Target url=test.onion
+time=2025-12-25T09:22:50.081-05:00 level=INFO msg=Target url="  - example2.onion"
+time=2025-12-25T09:22:50.081-05:00 level=INFO msg=Target url="  - example3.onion"
+time=2025-12-25T09:22:50.081-05:00 level=INFO msg=Target url="  - example4.onion"
+time=2025-12-25T09:22:50.081-05:00 level=INFO msg=Target url="  - example5.onion"
+time=2025-12-25T09:22:50.081-05:00 level=INFO msg=Target url="  - example6.onion"
+time=2025-12-25T09:22:50.081-05:00 level=INFO msg=Target url="  - example7.onion"
+time=2025-12-25T09:22:50.081-05:00 level=INFO msg=Target url="  - example8.onion"
+time=2025-12-25T09:22:50.081-05:00 level=INFO msg=Target url="  - example9.onion"
+time=2025-12-25T09:22:50.081-05:00 level=INFO msg=Target url="  - example10.onion"
+time=2025-12-25T09:22:50.081-05:00 level=INFO msg=Target url="  - example11.onion"
+time=2025-12-25T09:22:50.081-05:00 level=INFO msg=Target url="  - example12.onion"
+time=2025-12-25T09:22:50.081-05:00 level=INFO msg=Target url="  - example13.onion"
+time=2025-12-25T09:22:50.081-05:00 level=INFO msg=Target url="  - example14.onion"
+time=2025-12-25T09:22:50.081-05:00 level=INFO msg=Target url="  - example15.onion"
+time=2025-12-25T09:22:50.081-05:00 level=INFO msg=Target url="  - example16.onion"
+time=2025-12-25T09:22:50.081-05:00 level=INFO msg="Scan completed"
+time=2025-12-25T09:23:15.668-05:00 level=INFO msg="Tor Scraper started"
+time=2025-12-25T09:23:15.668-05:00 level=INFO msg="Loaded targets" count=16
+time=2025-12-25T09:23:15.668-05:00 level=INFO msg="Scan completed"
+time=2025-12-25T09:36:39.012-05:00 level=INFO msg="Loaded targets" count=16
+time=2025-12-25T09:36:39.012-05:00 level=INFO msg="Tor Scraper started"
+time=2025-12-25T09:36:55.013-05:00 level=INFO msg="Scan completed"
