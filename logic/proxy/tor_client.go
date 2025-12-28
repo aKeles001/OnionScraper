@@ -8,8 +8,10 @@ import (
 	"golang.org/x/net/proxy"
 )
 
-func NewTorClient(cfg config.Config) (*http.Client, error) {
-	dialer, err := proxy.SOCKS5("tcp", cfg.TorProxy, nil, proxy.Direct)
+func TorClient(cfg config.Config) (*http.Client, error) {
+	const torProxyAddr = "127.0.0.1:9050"
+
+	dialer, err := proxy.SOCKS5("tcp", torProxyAddr, nil, proxy.Direct)
 	if err != nil {
 		return nil, err
 	}

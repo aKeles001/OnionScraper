@@ -32,21 +32,17 @@ func Init(logPath string) error {
 	)
 
 	logger = slog.New(handler)
-
-	// Mirror logs to stdout
 	log.SetOutput(os.Stdout)
 
 	return nil
 }
 
-// Close closes the log file
 func Close() {
 	if logFile != nil {
 		logFile.Close()
 	}
 }
 
-// Info logs an informational message
 func Info(msg string, args ...any) {
 	logger.Info(msg, args...)
 
@@ -57,7 +53,6 @@ func Info(msg string, args ...any) {
 	}
 }
 
-// Error logs an error message
 func Error(msg string, args ...any) {
 	logger.Error(msg, args...)
 	log.Println("[ERROR]", msg)

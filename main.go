@@ -20,6 +20,7 @@ func main() {
 	outputDir := flag.String("out", "data/outputs", "Output directory")
 	timeout := flag.Int("timeout", 30, "Request timeout in seconds")
 	torProxy := flag.String("proxy", "127.0.0.1:9050", "Tor SOCKS5 proxy address")
+	maxRetries := flag.Int("retries", 3, "Maximum number of retries for requests")
 	help := flag.Bool("help", false, "Show help message")
 
 	if *help {
@@ -34,6 +35,7 @@ func main() {
 		OutputDir:  *outputDir,
 		TorProxy:   *torProxy,
 		Timeout:    time.Duration(*timeout) * time.Second,
+		MaxRetries: *maxRetries,
 	}
 
 	if err := logger.Init(cfg.OutputDir); err != nil {
@@ -60,7 +62,7 @@ func main() {
 
 	logger.Info("Tor Scraper started")
 
-	client, err := proxy.NewTorClient(cfg)
+	client, err := proxy.TorClient(cfg)
 	if err != nil {
 		logger.Error("Failed to initialize Tor client: %v", err)
 		os.Exit(1)
@@ -76,7 +78,8 @@ func main() {
 		Targets: targets,
 		Client:  client,
 		Writer:  writer,
-		Timeout: cfg.Timeout,
+		Timeout: cfg.Timeout * 25,
+		Retries: cfg.MaxRetries,
 	})
 
 	logger.Info("Scan completed")

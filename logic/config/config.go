@@ -7,14 +7,11 @@ type Config struct {
 	TargetFile string
 
 	// Network
-	TorProxy string
-	Timeout  time.Duration
+	TorProxy   string
+	Timeout    time.Duration
+	MaxRetries int
 
 	// Output
 	OutputDir  string
 	ReportFile string
-
-	// Execution
-	Workers int
-	Retries int
 }
