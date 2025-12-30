@@ -18,7 +18,6 @@ type Scanner struct {
 	Writer  *output.Writer
 	Timeout time.Duration
 }
-
 type Options struct {
 	Targets []string
 	Client  *http.Client
@@ -26,7 +25,6 @@ type Options struct {
 	Timeout time.Duration
 	Retries int
 }
-
 type TorStatus struct {
 	IP       string
 	IsTor    bool
@@ -123,7 +121,7 @@ func (s *Scanner) CaptureScreenshot(targetURL string) ([]byte, error) {
 
 		chromedp.WaitVisible(`body`, chromedp.ByQuery),
 
-		chromedp.Sleep(5*time.Second),
+		chromedp.Sleep(25*time.Second),
 
 		chromedp.FullScreenshot(&buf, 90),
 	)
@@ -137,7 +135,7 @@ func (s *Scanner) CaptureScreenshot(targetURL string) ([]byte, error) {
 func (s *Scanner) checkTorStatus() (*TorStatus, error) {
 	resp, err := s.Client.Get("https://check.torproject.org/api/ip")
 	if err != nil {
-		return nil, fmt.Errorf("tor check failed: %w", err)
+		return nil, fmt.Errorf("Tor check failed: %w", err)
 	}
 	defer resp.Body.Close()
 	var status TorStatus

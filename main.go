@@ -28,8 +28,7 @@ func main() {
 		return
 	}
 	flag.Parse()
-
-	/*Load Configuration*/
+	/*Configuration Initialization*/
 	cfg := config.Config{
 		TargetFile: *targetFile,
 		OutputDir:  *outputDir,
@@ -37,7 +36,6 @@ func main() {
 		Timeout:    time.Duration(*timeout) * time.Second,
 		MaxRetries: *maxRetries,
 	}
-
 	if err := logger.Init(cfg.OutputDir); err != nil {
 		fmt.Fprintf(os.Stderr, "logger init failed: %v\n", err)
 		os.Exit(1)
@@ -59,21 +57,19 @@ func main() {
 	for _, target := range targets {
 		fmt.Println("Target", "url", target)
 	}
-
+	/*Tor Client and Output Directory Initialization*/
 	logger.Info("Tor Scraper started")
-
 	client, err := proxy.TorClient(cfg)
 	if err != nil {
 		logger.Error("Failed to initialize Tor client: %v", err)
 		os.Exit(1)
 	}
-
 	writer, err := output.NewWriter(cfg.OutputDir)
 	if err != nil {
 		logger.Error("Failed to initialize output writer: %v", err)
 		os.Exit(1)
 	}
-
+	/*Run Scanner*/
 	scanner.Run(scanner.Options{
 		Targets: targets,
 		Client:  client,

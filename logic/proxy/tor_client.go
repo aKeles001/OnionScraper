@@ -15,15 +15,12 @@ func TorClient(cfg config.Config) (*http.Client, error) {
 	if err != nil {
 		return nil, err
 	}
-
 	transport := &http.Transport{
 		Dial: dialer.Dial,
 	}
-
 	client := &http.Client{
 		Transport: transport,
 		Timeout:   cfg.Timeout,
 	}
-
 	return client, nil
 }
