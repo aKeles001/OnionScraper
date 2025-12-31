@@ -8,6 +8,7 @@ import (
 	"net/http"
 	"onionscraper/logic/logger"
 	"onionscraper/logic/output"
+	"os"
 	"time"
 
 	"github.com/chromedp/chromedp"
@@ -44,11 +45,13 @@ func Run(opts Options) {
 	response, err := scanner.checkTorStatus()
 	if err != nil {
 		logger.Error("Failed to check Tor status: %v", err)
+		os.Exit(1)
 	} else {
 		if response.IsTor {
 			logger.Info("Connected to Tor network", "IP", response.IP)
 		} else {
 			logger.Error("Not connected to Tor network")
+			os.Exit(1)
 		}
 	}
 	for _, target := range opts.Targets {

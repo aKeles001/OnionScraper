@@ -10,8 +10,6 @@ var (
 	logger  *slog.Logger
 	logFile *os.File
 )
-
-// Init initializes structured logging to stdout + file
 func Init(logPath string) error {
 	var err error
 
